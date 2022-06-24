@@ -46,7 +46,7 @@ const LoginCard: React.FC<LoginCardProps> = props => {
   if (loading) {
     return (
       <div className={classes.loading}>
-        <CircularProgress size={128} />
+        <CircularProgress size={128} style={{ color: "#42b837" }} />
       </div>
     );
   }

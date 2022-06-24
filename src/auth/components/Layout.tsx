@@ -1,6 +1,6 @@
+import grocerboxDarkLogo from "@assets/images/grocerbox_logo_white.svg";
+import grocerboxLightLogo from "@assets/images/grocerbox_logo.svg";
 import backgroundArt from "@assets/images/login-background.svg";
-import saleorDarkLogo from "@assets/images/logo-dark.svg";
-import saleorLightLogo from "@assets/images/logo-light.svg";
 import { makeStyles, useTheme } from "@saleor/macaw-ui";
 import React from "react";
 import SVG from "react-inlinesvg";
@@ -85,11 +85,11 @@ const Layout: React.FC = props => {
       <div className={classes.mainPanel}>
         <SVG
           className={classes.logo}
-          src={themeType === "dark" ? saleorDarkLogo : saleorLightLogo}
+          src={themeType === "dark" ? grocerboxDarkLogo : grocerboxLightLogo}
         />
         <div className={classes.mainPanelContent}>{children}</div>
         <footer className={classes.footer}>
-          ©2021 Saleor Commerce. All rights reserved
+          ©2022 Grocerbox Enterprise. All rights reserved
         </footer>
       </div>
       <div className={classes.sidebar}>

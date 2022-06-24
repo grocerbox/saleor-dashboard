@@ -18,7 +18,7 @@ const LoginLoading: React.FC = props => {
 
   return (
     <div className={classes.root}>
-      <CircularProgress size={128} />
+      <CircularProgress size={128} style={{ color: "#42b837" }} />
     </div>
   );
 };
