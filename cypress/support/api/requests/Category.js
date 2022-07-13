@@ -1,6 +1,6 @@
 import {
   getDataForDescriptionInVariables,
-  getValueWithDefault
+  getValueWithDefault,
 } from "./utils/Utils";
 
 export function createCategory({ name, slug = name, parent }) {
@@ -30,7 +30,7 @@ export function getCategory(categoryId, translationLanguageCode) {
     description
     seoTitle
     seoDescription
-  }`
+  }`,
   );
 
   const mutation = `query{
@@ -93,7 +93,7 @@ export function updateCategoryTranslation({
   seoTitle,
   seoDescription,
   name,
-  description
+  description,
 }) {
   const descriptionData = getDataForDescriptionInVariables(description);
   const mutation = `mutation Update_fields${descriptionData.mutationVariables}{
@@ -115,6 +115,6 @@ export function updateCategoryTranslation({
     mutation,
     "auth",
     descriptionData.variables,
-    true
+    true,
   );
 }

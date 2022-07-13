@@ -3,7 +3,7 @@ import { getDefaultAddress, getValueWithDefault } from "./utils/Utils";
 export function createWarehouse({ name, shippingZone, address, slug = name }) {
   const shippingZoneLine = getValueWithDefault(
     shippingZone,
-    `shippingZones:"${shippingZone}"`
+    `shippingZones:"${shippingZone}"`,
   );
   const mutation = `mutation{
     createWarehouse(input:{
@@ -86,7 +86,7 @@ export function getWarehouse(warehouseId) {
 export function updateWarehouse({
   id,
   isPrivate,
-  clickAndCollectOption = "ALL"
+  clickAndCollectOption = "ALL",
 }) {
   const mutation = `mutation{
     updateWarehouse(id:"${id}" input:{

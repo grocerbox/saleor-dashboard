@@ -43,12 +43,12 @@ export function createDraftOrder({
   customerId,
   shippingMethodId,
   channelId,
-  address
+  address,
 }) {
   const user = getValueWithDefault(customerId, `user:"${customerId}"`);
   const shippingMethod = getValueWithDefault(
     shippingMethodId,
-    `shippingMethod:"${shippingMethodId}"`
+    `shippingMethod:"${shippingMethodId}"`,
   );
 
   const mutation = `mutation{
