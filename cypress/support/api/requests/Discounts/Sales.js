@@ -1,7 +1,7 @@
 import {
   getValuesInArray,
   getValueWithDefault,
-  getVariantsIdsLines
+  getVariantsIdsLines,
 } from "../utils/Utils";
 
 export function getSales(first, searchQuery) {
@@ -9,7 +9,7 @@ export function getSales(first, searchQuery) {
     searchQuery,
     `, filter:{
         search:"${searchQuery}"
-      }`
+      }`,
   );
   const query = `query{
     sales(first:
@@ -61,12 +61,12 @@ export function createSale({ name, type, value, products, variants }) {
 export function updateSale({ saleId, variants, productId }) {
   const productsLine = getValueWithDefault(
     productId,
-    `products: [${productId}]`
+    `products: [${productId}]`,
   );
   const variantsLines = getValueWithDefault(
     variants,
     getValuesInArray(getVariantsIdsLines(variants)),
-    "[]"
+    "[]",
   );
   const mutation = `mutation{
     saleUpdate(id:"${saleId}" input:{
